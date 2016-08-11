@@ -23,6 +23,6 @@ out
 /webapp/WEB-INF/target/
 
 
-
+/classes/
 /.classpath
 /.project
