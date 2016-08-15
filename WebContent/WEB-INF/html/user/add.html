@@ -1,0 +1,22 @@
+<#import "/spring.ftl" as spring />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"   
+ "http://www.w3.org/TR/html4/loose.dtd">  
+<html>  
+    <head>  
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+        <title><#if (u.id!0)==0> 添加 <#else> 编辑 </#if></title>  
+    </head>  
+    <body>  
+       <form action="${root!}/user/<#if (u.id!0)==0>save<#else>update</#if>" method="post">
+       	<input type="hidden" name="id" value="${pojo.id!}">
+       	姓名：<input type="text" name="username" value="${u.username!}"> <br/><br/>
+       	<#if u??>  
+		    <@spring.bind "u.username" />  <br/>
+		    <#list spring.status.errorMessages as error> <b>${error}</b> <br> </#list> 
+		</#if> 
+       	年龄：<input type="text" name="age" value="${u.age!}"><br/><br/>
+       	密码：<input type="text" name="password" value="${u.password!}"><br/><br/>
+       	<input type="submit" value="提交" />
+       </form>
+    </body>  
+</html>  
