@@ -11,11 +11,20 @@
        	<input type="hidden" name="id" value="${pojo.id!}">
        	姓名：<input type="text" name="username" value="${u.username!}"> <br/><br/>
        	<#if u??>  
-		    <@spring.bind "u.username" />  <br/>
-		    <#list spring.status.errorMessages as error> <b>${error}</b> <br> </#list> 
+		    <@spring.bind "u.username" />
+		    <!-- <#list spring.status.errorMessages as error> <b>${error}</b> <br> </#list> -->
+		  	<@spring.showErrors ""/> <br>
 		</#if> 
        	年龄：<input type="text" name="age" value="${u.age!}"><br/><br/>
+    	 <#if u??>  
+		    <@spring.bind "u.age" />
+		  	<@spring.showErrors ""/> <br>
+		</#if> 
        	密码：<input type="text" name="password" value="${u.password!}"><br/><br/>
+       	<#if u??>  
+		    <@spring.bind "u.password" />
+		  	<@spring.showErrors ""/> <br>
+		</#if>
        	<input type="submit" value="提交" />
        </form>
     </body>  

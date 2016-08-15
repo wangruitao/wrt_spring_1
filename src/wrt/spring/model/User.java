@@ -10,11 +10,11 @@ public class User {
 	
 	private Long id;
 	@NotNull(message="不能为空")
-	@Size(min=1, max=5)
+	@Size(min=1, max=5, message="最小1位，最多5位字符")
 	private String username;
 	@Pattern(regexp="[0-9a-zA-Z]{2,23}", message="最少两位字符，包含数字和字符")
     private String password;  
-	@Range(min=1, max=200)
+	@Range(min=1, max=200, message="大于1小于200")
     private Integer age;
   
     
