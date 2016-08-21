@@ -1,4 +1,4 @@
-package wrt.spring.controller;
+package wrt.spring.controller.user;
 
 import java.util.ArrayList;
 import java.util.List;
